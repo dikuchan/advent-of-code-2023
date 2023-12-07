@@ -63,7 +63,6 @@ func makeHandSet(cards []Card) map[Card]int {
 	for _, card := range cards {
 		s[card]++
 	}
-	// fmt.Println(cards, s)
 	return s
 }
 

@@ -2,8 +2,9 @@ package day04
 
 import (
 	"bufio"
-	"strconv"
 	"strings"
+
+	"github.com/dikuchan/aoc-2023/utils"
 )
 
 type Card struct {
@@ -24,21 +25,14 @@ func (c Card) getWinCount() int {
 
 func parseCardNumber(s string) int {
 	fields := strings.Fields(s)
-	n, err := strconv.Atoi(fields[1])
-	if err != nil {
-		panic("failed to convert string to integer")
-	}
-	return n
+	return utils.Atoi(fields[1])
 }
 
 func parseNumbers(s string) map[int]struct{} {
 	fields := strings.Fields(s)
 	parsed := make(map[int]struct{}, len(fields))
 	for _, field := range fields {
-		n, err := strconv.Atoi(field)
-		if err != nil {
-			panic("failed to convert string to integer")
-		}
+		n := utils.Atoi(field)
 		parsed[n] = struct{}{}
 	}
 	return parsed
