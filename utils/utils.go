@@ -1,6 +1,10 @@
 package utils
 
-import "strconv"
+import (
+	"strconv"
+
+	cs "golang.org/x/exp/constraints"
+)
 
 func RuneToInteger(r rune) int {
 	return int(r - '0')
@@ -51,4 +55,25 @@ func Max(x, y int) int {
 		return x
 	}
 	return y
+}
+
+func GCD[T cs.Integer](x, y T) T {
+	for y != 0 {
+		x, y = y, x%y
+	}
+	return x
+}
+
+func LCM[T cs.Integer](values ...T) T {
+	if len(values) == 1 {
+		return values[0]
+	}
+	var x = values[0]
+	var y = values[1]
+	var r = x * y / GCD(x, y)
+	values = values[2:]
+	for i := 0; i < len(values); i++ {
+		r = LCM(r, values[i])
+	}
+	return r
 }
