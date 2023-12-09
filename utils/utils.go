@@ -31,23 +31,23 @@ func AtoiArray(sarray []string) []int {
 }
 
 func FindMin(array []int) int {
-	var answer = array[0]
+	var r = array[0]
 	for _, value := range array {
-		if value < answer {
-			answer = value
+		if value < r {
+			r = value
 		}
 	}
-	return answer
+	return r
 }
 
 func FindMax(array []int) int {
-	var answer = array[0]
+	var r = array[0]
 	for _, value := range array {
-		if value > answer {
-			answer = value
+		if value > r {
+			r = value
 		}
 	}
-	return answer
+	return r
 }
 
 func Max(x, y int) int {

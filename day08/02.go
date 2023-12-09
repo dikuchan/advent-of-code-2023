@@ -31,14 +31,12 @@ func solveForNode(tree Tree, path Path, node Node) int64 {
 		if node.IsFinal() {
 			return steps
 		}
-		var nextNode Node
 		switch direction {
 		case Left:
-			nextNode = tree[node].Left
+			node = tree[node].Left
 		case Right:
-			nextNode = tree[node].Right
+			node = tree[node].Right
 		}
-		node = nextNode
 		steps++
 	}
 }
