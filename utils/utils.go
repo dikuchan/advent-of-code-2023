@@ -77,3 +77,11 @@ func LCM[T cs.Integer](values ...T) T {
 	}
 	return r
 }
+
+func Sum[T cs.Integer](values ...T) T {
+	var r T
+	for _, value := range values {
+		r += value
+	}
+	return r
+}
