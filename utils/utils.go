@@ -30,7 +30,7 @@ func AtoiArray(sarray []string) []int {
 	return array
 }
 
-func FindMin(array []int) int {
+func FindMin[T cs.Integer](array []T) T {
 	var r = array[0]
 	for _, value := range array {
 		if value < r {
@@ -40,7 +40,7 @@ func FindMin(array []int) int {
 	return r
 }
 
-func FindMax(array []int) int {
+func FindMax[T cs.Integer](array []T) T {
 	var r = array[0]
 	for _, value := range array {
 		if value > r {
@@ -50,7 +50,7 @@ func FindMax(array []int) int {
 	return r
 }
 
-func Max(x, y int) int {
+func Max[T cs.Integer](x, y T) T {
 	if x > y {
 		return x
 	}
