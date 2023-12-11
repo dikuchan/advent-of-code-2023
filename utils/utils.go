@@ -57,6 +57,13 @@ func Max[T cs.Integer](x, y T) T {
 	return y
 }
 
+func Min[T cs.Integer](x, y T) T {
+	if x < y {
+		return x
+	}
+	return y
+}
+
 func GCD[T cs.Integer](x, y T) T {
 	for y != 0 {
 		x, y = y, x%y
@@ -84,4 +91,11 @@ func Sum[T cs.Integer](values ...T) T {
 		r += value
 	}
 	return r
+}
+
+func Abs[T cs.Signed](x T) T {
+	if x < 0 {
+		return -x
+	}
+	return x
 }
