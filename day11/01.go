@@ -64,9 +64,7 @@ func solve(in string, expandedBy int) int {
 				break
 			}
 		}
-		if expanded {
-			expansionY[y] = true
-		}
+		expansionY[y] = expanded
 	}
 
 	var expansionX = make([]bool, nX)
@@ -78,9 +76,7 @@ func solve(in string, expandedBy int) int {
 				break
 			}
 		}
-		if expanded {
-			expansionX[x] = true
-		}
+		expansionX[x] = expanded
 	}
 
 	var answer int
