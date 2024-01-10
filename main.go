@@ -18,6 +18,7 @@ import (
 	"github.com/dikuchan/aoc-2023/day11"
 	"github.com/dikuchan/aoc-2023/day12"
 	"github.com/dikuchan/aoc-2023/day13"
+	"github.com/dikuchan/aoc-2023/day14"
 )
 
 type Solver interface {
@@ -64,6 +65,9 @@ var in12 string
 //go:embed day13/data/in.txt
 var in13 string
 
+//go:embed day14/data/in.txt
+var in14 string
+
 var Solvers = map[string]Solver{
 	"01": day01.Solver{},
 	"02": day02.Solver{},
@@ -78,6 +82,7 @@ var Solvers = map[string]Solver{
 	"11": day11.Solver{},
 	"12": day12.Solver{},
 	"13": day13.Solver{},
+	"14": day14.Solver{},
 }
 var In = map[string]string{
 	"01": in01,
@@ -93,6 +98,7 @@ var In = map[string]string{
 	"11": in11,
 	"12": in12,
 	"13": in13,
+	"14": in14,
 }
 
 var task string
